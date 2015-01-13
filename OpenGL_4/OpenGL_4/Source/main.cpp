@@ -1,11 +1,14 @@
-#include "glew.h"
-#include <iostream>
-using namespace std;
+#include "FrameWork.h"
 int main()
 {
-	if (glewInit())
-	{
+	//Initialize the FrameWork
+	FrameWork* framework = new FrameWork();
+	framework->Initialize();
+	//update our framework
+	framework->Run();
 
-	}
+	delete framework;
+	framework = NULL;
+
 	return 0;
 }

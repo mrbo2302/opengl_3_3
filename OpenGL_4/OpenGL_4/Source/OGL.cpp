@@ -107,7 +107,7 @@ bool OGL::InitializeOGL(bool vSync)
 
 	int glVersion[2] = { -1, -1 };
 	glGetIntegerv(GL_MAJOR_VERSION, &glVersion[0]);
-	glGetIntegerv(GL_MINOR_VERSION, &glVersion[2]);
+	glGetIntegerv(GL_MINOR_VERSION, &glVersion[1]);
 
 	cout << "Intializing OpenGL SUCCESS" << endl;
 	cout << "Using OpenGL 4.0" << glVersion[0] <<  "." << glVersion[1] << endl;
@@ -175,7 +175,7 @@ bool OGL::InitializeExtensions()
 //Function : Load Extension
 bool OGL::LoadExtensions()
 {
-	wglCreateContextAttribsARB = (PFNWGLCREATECONTEXTATTRIBSARBPROC)wglGetProcAddress("wglCreateContextAttibsARB");
+	wglCreateContextAttribsARB = (PFNWGLCREATECONTEXTATTRIBSARBPROC)wglGetProcAddress("wglCreateContextAttribsARB");
 	if (!wglCreateContextAttribsARB)
 	{
 		return false;
@@ -212,5 +212,17 @@ void OGL::Release()
 		ReleaseDC(m_hwnd, m_deviceContext);
 		m_deviceContext = 0;
 	}
+}
+
+//Function : Get HWND
+HWND OGL::GetHWND()
+{
+	return m_hwnd;
+}
+
+//Function : Set HWND
+void OGL::SetHWND(HWND pHWND)
+{
+	m_hwnd = pHWND;
 }
 
