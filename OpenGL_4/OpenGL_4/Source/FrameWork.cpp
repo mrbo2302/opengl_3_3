@@ -1,6 +1,7 @@
 #include "FrameWork.h"
 #include "Engine.h"
-
+#include "SystemDefs.h"
+#include "Timer.h"
 LRESULT CALLBACK WndProc(HWND pHWND, UINT pMessage, WPARAM wParam, LPARAM lParam);
 
 FrameWork::FrameWork()
@@ -21,7 +22,7 @@ FrameWork::~FrameWork()
 //Function : Initialize our FW
 void FrameWork::Initialize()
 {
-	if (!CreateOpenGLWindows(m_windowsTitle, 0, 0, 1024, 768))
+	if (!CreateOpenGLWindows(m_windowsTitle, WIND_POSX, 0, 1024, 768))
 	{
 		return;
 	}
@@ -44,6 +45,7 @@ void FrameWork::Run()
 		else
 		{
 			//update timer
+			Timer::Update();
 			//run the engine
 			Engine::GetEngine()->Run();
 		}
