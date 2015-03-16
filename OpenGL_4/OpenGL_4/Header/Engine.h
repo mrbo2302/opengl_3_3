@@ -28,5 +28,6 @@ public:
 private:
 	static Engine* m_engine;
 	Graphics* m_graphics;
+
 };
 #endif

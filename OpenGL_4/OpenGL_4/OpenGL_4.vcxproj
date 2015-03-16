@@ -93,6 +93,8 @@
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\MathCore.cpp" />
     <ClCompile Include="Source\OGL.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\SpriteBatch.cpp" />
     <ClCompile Include="Source\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +102,8 @@
     <ClInclude Include="Header\FrameWork.h" />
     <ClInclude Include="Header\KRectangle.h" />
     <ClInclude Include="Header\MathCore.h" />
+    <ClInclude Include="Header\Shader.h" />
+    <ClInclude Include="Header\SpriteBatch.h" />
     <ClInclude Include="Header\SystemDefs.h" />
     <ClInclude Include="Header\Graphics.h" />
     <ClInclude Include="Header\OGL.h" />

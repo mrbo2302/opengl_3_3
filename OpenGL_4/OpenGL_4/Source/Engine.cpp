@@ -5,6 +5,7 @@ Engine* Engine::m_engine = NULL;
 Engine::~Engine()
 {
 	m_graphics = NULL;
+
 }
 
 //Function : Initialize the Graphics
@@ -17,7 +18,7 @@ bool Engine::InitializeGraphics(HWND pHWND)
 //Function : Initialize Engine
 void Engine::Initialize()
 {
-
+	m_graphics->Initialize();
 }
 
 //Function : Update and Render for Engine
@@ -28,6 +29,7 @@ void Engine::Run()
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	//render our scene
+
 
 	m_graphics->EndScene();
 
@@ -54,6 +56,7 @@ void Engine::Release()
 		delete m_engine;
 		m_engine = NULL;
 	}
+
 }
 
 //Function : Return the Singleton for the Engine

@@ -6,4 +6,8 @@
 #define WIND_POSX	0
 #define WIND_POSY	0
 
+typedef unsigned int U32;
+
+
+
 #endif

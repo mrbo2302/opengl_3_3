@@ -3,11 +3,18 @@
 Graphics::Graphics()
 {
 	m_ogl = NULL;
+	m_spriteBatch = NULL;
 }
 
 Graphics::~Graphics()
 {
 
+}
+//Function : Initialize Graphics
+void Graphics::Initialize()
+{
+	m_spriteBatch = new SpriteBatch();
+	m_spriteBatch->Initialize();
 }
 //Function : Initialize OpenGL and Extensions
 bool Graphics::InitializeOGL(HWND pHWND)
@@ -43,6 +50,12 @@ OGL* Graphics::GetOpenGL()
 	return m_ogl;
 }
 
+//Function : Get SpriteBatch
+SpriteBatch* Graphics::GetSpriteBatch()
+{
+	return m_spriteBatch;
+}
+
 //Function : Release Memory
 void Graphics::Release()
 {
@@ -51,5 +64,9 @@ void Graphics::Release()
 		m_ogl->Release();
 		delete m_ogl;
 		m_ogl = NULL;
+	}
+	if (m_spriteBatch)
+	{
+		delete m_spriteBatch;
 	}
 }
