@@ -2,7 +2,7 @@
 #define SHADER_H
 #include <fstream>
 #include "OGL.h"
-#include "Engine.h"
+//#include "Engine.h"
 #include "MathCore.h"
 #include "SystemDefs.h"
 class Shader

@@ -53,6 +53,14 @@ Vector2::Vector2(float x, float y)
 	_x = x;
 	_y = y;
 }
+float Vector2::GetX()
+{
+	return _x;
+}
+float Vector2::GetY()
+{
+	return _y;
+}
 
 ////////////////////////////////////////
 /////////////Vector3///////////////////
@@ -68,4 +76,16 @@ Vector3::Vector3(float x, float y,float z)
 	_x = x;
 	_y = y;
 	_z = z;
+}
+float Vector3::GetX()
+{
+	return _x;
+}
+float Vector3::GetY()
+{
+	return _y;
+}
+float Vector3::GetZ()
+{
+	return _z;
 }

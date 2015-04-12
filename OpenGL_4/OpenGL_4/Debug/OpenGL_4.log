@@ -1,16 +1,23 @@
-﻿Build started 3/12/2015 6:03:07 PM.
+﻿Build started 4/12/2015 2:12:25 PM.
      1>Project "E:\OpenGL 3.3\opengl_3_3\OpenGL_4\OpenGL_4\OpenGL_4.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IHeader /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Shader.cpp
-         Shader.cpp
-     1>e:\opengl 3.3\opengl_3_3\opengl_4\opengl_4\source\shader.cpp(141): error C4716: 'Shader::SetShaderFloatParameter' : must return a value
-     1>e:\opengl 3.3\opengl_3_3\opengl_4\opengl_4\source\shader.cpp(147): error C4716: 'Shader::SetShaderIntParameter' : must return a value
-     1>e:\opengl 3.3\opengl_3_3\opengl_4\opengl_4\source\shader.cpp(153): error C4716: 'Shader::SetShaderVec2Parameter' : must return a value
-     1>e:\opengl 3.3\opengl_3_3\opengl_4\opengl_4\source\shader.cpp(159): error C4716: 'Shader::SetShaderVec3Parameter' : must return a value
-     1>e:\opengl 3.3\opengl_3_3\opengl_4\opengl_4\source\shader.cpp(165): error C4716: 'Shader::SetShaderSamplerParameter' : must return a value
-     1>e:\opengl 3.3\opengl_3_3\opengl_4\opengl_4\source\shader.cpp(135): error C4716: 'Shader::SetShaderMatrixParameter' : must return a value
-     1>Done Building Project "E:\OpenGL 3.3\opengl_3_3\OpenGL_4\OpenGL_4\OpenGL_4.vcxproj" (Build target(s)) -- FAILED.
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IHeader /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source\Engine.cpp
+         Engine.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\OpenGL 3.3\opengl_3_3\OpenGL_4\Debug\OpenGL_4.exe" /INCREMENTAL /NOLOGO opengl32.lib glew32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\OpenGL 3.3\opengl_3_3\OpenGL_4\Debug\OpenGL_4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\OpenGL 3.3\opengl_3_3\OpenGL_4\Debug\OpenGL_4.lib" /MACHINE:X86 Debug\Engine.obj
+         Debug\FrameWork.obj
+         Debug\Graphics.obj
+         Debug\KRectangle.obj
+         Debug\main.obj
+         Debug\MathCore.obj
+         Debug\OGL.obj
+         Debug\Shader.obj
+         Debug\ShaderManager.obj
+         Debug\SpriteBatch.obj
+         Debug\Timer.obj
+         OpenGL_4.vcxproj -> E:\OpenGL 3.3\opengl_3_3\OpenGL_4\Debug\OpenGL_4.exe
+     1>Done Building Project "E:\OpenGL 3.3\opengl_3_3\OpenGL_4\OpenGL_4\OpenGL_4.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.32
+Time Elapsed 00:00:01.91

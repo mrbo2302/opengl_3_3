@@ -1,7 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 #include "Graphics.h"
-
+#include "ShaderManager.h"
 class Engine
 {
 public:
@@ -28,6 +28,6 @@ public:
 private:
 	static Engine* m_engine;
 	Graphics* m_graphics;
-
+	ShaderManager* m_shaderManager;
 };
 #endif

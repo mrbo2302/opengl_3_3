@@ -1,0 +1,16 @@
+#version 400
+
+//////////////////////
+//Output Variables////
+/////////////////////
+
+out vec4 outputColor;
+
+///////////////////////
+//////Pixel Shader/////
+//////////////////////
+
+void main(void)
+{
+	outputColor = vec4(1.0f,1.0f,1.0f,1.0f);
+}

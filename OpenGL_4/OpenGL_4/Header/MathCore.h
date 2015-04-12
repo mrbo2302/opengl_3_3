@@ -23,7 +23,8 @@ class Vector2
 public:
 	Vector2();
 	Vector2(float x, float y);
-	
+	float GetX();
+	float GetY();
 };
 class Vector3
 {
@@ -33,6 +34,8 @@ class Vector3
 public:
 	Vector3();
 	Vector3(float x, float y,float z);
-
+	float GetX();
+	float GetY();
+	float GetZ();
 };
 #endif

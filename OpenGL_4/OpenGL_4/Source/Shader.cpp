@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <iostream>
 using namespace std;
+#include "Engine.h"
 Shader::Shader()
 {
 
@@ -41,14 +42,14 @@ bool Shader::InitializeShader(const char* vsFileName, const char* psFilename)
 
 	//Load the vertex shader file into the buffer
 	vertexShaderBuffer = LoadShaderSourceFile(vsFileName);
-	if (vertexShaderBuffer)
+	if (!vertexShaderBuffer)
 	{
 		cout << "Shader vertex buffer counldnt be initialize " << endl;
 		return false;
 	}
 
 	pixelShaderBuffer = LoadShaderSourceFile(psFilename);
-	if (pixelShaderBuffer)
+	if (!pixelShaderBuffer)
 	{
 		cout << "Shader pixel buffer counldnt be initialize " << endl;
 		return false;
@@ -131,37 +132,75 @@ void Shader::EndShader()
 //Function : Set Matrix to Shader
 bool Shader::SetShaderMatrixParameter(const char* pName, float* pMatrix)
 {
-
+	int loc = glGetUniformLocation(m_shaderProgram, pName);
+	if (loc >= 0)
+	{
+		glUniformMatrix4fv(loc, 1, true, pMatrix);
+	}
+	return false;
 }
 
 //Function : Set float value to Shader
 bool Shader::SetShaderFloatParameter(const char* pName, float value)
 {
-
+	int loc = glGetUniformLocation(m_shaderProgram, pName);
+	if (loc >=0)
+	{
+		glUniform1f(loc, value);
+		return true;
+	}
+	return false;
 }
 
 //Function : Set int value to Shader
 bool Shader::SetShaderIntParameter(const char* pName, int value)
 {
-
+	int loc = glGetUniformLocation(m_shaderProgram, pName);
+	if (loc >= 0)
+	{
+		glUniform1i(loc, value);
+		return true;
+	}
+	return false;
 }
 
 //Function : Set vector2 value to Shader
 bool Shader::SetShaderVec2Parameter(const char* pName, Vector2 value)
 {
-
+	int loc = glGetUniformLocation(m_shaderProgram, pName);
+	if (loc >= 0)
+	{
+		glUniform2f(loc, value.GetX(), value.GetY());
+		return true;
+	}
+	return false;
 }
 
 //Function : Set vector3 value to Shader
 bool Shader::SetShaderVec3Parameter(const char* pName, Vector3 value)
 {
-
+	int loc = glGetUniformLocation(m_shaderProgram, pName);
+	if (loc >= 0)
+	{
+		glUniform3f(loc, value.GetX(), value.GetY(), value.GetZ());
+		return true;
+	}
+	return false;
 }
 
 //Function : Set sampler value to Shader
 bool Shader::SetShaderSamplerParameter(const char* pName, int pSlot, int pHandle)
 {
+	int loc = glGetUniformLocation(m_shaderProgram, pName);
+	if (loc >= 0)
+	{
+		glActiveTexture(GL_TEXTURE0 + pSlot);
+		glBindTexture(GL_TEXTURE_2D, pHandle);
 
+		glUniform1i(loc, pSlot);
+		return true;
+	}
+	return false;
 }
 
 
@@ -184,7 +223,7 @@ char* Shader::LoadShaderSourceFile(const char* pFilename)
 	rewind(pFile);
 
 	shaderBuffer = new char[bufferSize + 1];
-	if (fread(shaderBuffer,bufferSize,1,pFile))
+	if (!fread(shaderBuffer,bufferSize,1,pFile))
 	{
 		fclose(pFile);
 		return NULL;
